@@ -1,0 +1,41 @@
+extends layout
+block content 
+    .card
+        .card-header 
+             h1.text-uppercase #{title}
+             a.pull-right.btn.btn-success(href="/users") Back to list
+        .card-body
+            form(method="POST",class="needs-validation" ,action="/users/add",novalidate)
+                small.text-danger.text-center Please, fill correctly and submit
+                #form-group
+                    label Name: 
+                    span.text-danger *
+                    input.form-control(type="text", name="name",required)
+                    .invalid-feedback 
+                        p Name required
+                #form-group
+                    label Email: 
+                    span.text-danger *
+                    input.form-control(type="text", name="email",required)
+                    .invalid-feedback 
+                        p Email required
+                #form-group
+                    label Username: 
+                    span.text-danger *
+                    input.form-control(type="text", name="username", required)
+                    .invalid-feedback 
+                        p Username required
+                #form-group
+                    label Password: 
+                    span.text-danger *
+                    input.form-control(type="password", name="password",required)
+                    .invalid-feedback 
+                        p Password required
+                #form-group
+                    label Confirm Password: 
+                    span.text-danger *
+                    input.form-control(type="password", name="password2",required)
+                    .invalid-feedback 
+                        p Password doesn't match
+                br
+                input.btn.btn-primary(type="submit", value="Submit")

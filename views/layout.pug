@@ -1,0 +1,45 @@
+doctype html 
+html
+    head
+        title Node CRUD
+        link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css")
+        link(rel="stylesheet" href="/bower_components/font-awesome-4.7.0/css/font-awesome.min.css")
+        link(rel="stylesheet" href="/css/styles.css")
+    body
+        nav.navbar.navbar-expand-md.bg-dark.navbar-dark
+          a.navbar-brand(href='/') User management system
+          button.navbar-toggler(type='button' data-toggle='collapse' data-target='#collapsibleNavbar')
+            span.navbar-toggler-icon
+          #collapsibleNavbar.collapse.navbar-collapse
+            ul.nav.navbar-nav
+              li.nav-item
+                a.nav-link(href='/') Home
+              li.nav-item
+                a.nav-link(href='/users') Users
+             
+            ul.nav.navbar-nav.navbar-right 
+              if user
+                li.nav-item
+                  a.nav-link(href='/account/logout') Logout
+              else
+                li.nav-item
+                    a.nav-link(href='/account/login') Login
+            
+        br
+        .container
+            != messages("message",locals)
+            if errors 
+                each error,i in errors 
+                    div(class="alert alert-danger") #{error.msg}
+            block content
+            br
+            hr
+            footer 
+                p Copyright &copy; 2021
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js")
+        script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js")
+        script(src="/bower_components/jquery-validation/dist/jquery.validate.min.js")
+        script(src="/js/jqueryValidator.js")
+        script(src="/js/UserPage.js")
+        script(src="https://unpkg.com/sweetalert/dist/sweetalert.min.js")
