@@ -1,0 +1,24 @@
+{
+  "name": "nodecrud",
+  "version": "1.0.0",
+  "description": "This is project is built for basic CRUD operations using node express",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Precious Kosisochukwu Jenz",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "bower": "^1.8.12",
+    "connect-flash": "^0.1.1",
+    "express": "^4.17.1",
+    "express-messages": "^1.0.1",
+    "express-session": "^1.17.2",
+    "mongoose": "^5.12.12",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "pug": "^3.0.2"
+  }
+}

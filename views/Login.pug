@@ -1,0 +1,22 @@
+extends layout 
+block content 
+    .card 
+        .card-header 
+            h1.text-uppercase #{title}
+        .card-body 
+             form(method="POST",class="needs-validation" ,action="/account/login",novalidate)
+                small.text-danger.text-center Please, fill correctly and submit
+                #form-group
+                    label Username: 
+                    span.text-danger *
+                    input.form-control(type="text", name="username",required)
+                    .invalid-feedback 
+                        p Username required
+                #form-group
+                    label Password: 
+                    span.text-danger *
+                    input.form-control(type="password", name="password",required)
+                    .invalid-feedback 
+                        p Password required
+                br
+                input.btn.btn-primary(type="submit", value="Submit")
