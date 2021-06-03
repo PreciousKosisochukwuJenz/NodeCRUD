@@ -16,7 +16,6 @@ module.exports = (passport)=>{
             if(!user){
                 return done(null,false,{message:"No user found"})
             }
-
             // Match password
             bcrypt.compare(password,user.password,(err, isMatch)=>{
                 if(err){
